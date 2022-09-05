@@ -75,11 +75,14 @@ namespace MapMayhem
         {
             var async = SceneManager.LoadSceneAsync("08_Lvl1_Pirate_VC", LoadSceneMode.Additive);
             yield return new WaitUntil(() => async.isDone);
-            foreach (var obj in SceneManager.GetSceneByName("08_Lvl1_Pirate_VC").GetRootGameObjects())
+            if (SceneManager.GetSceneByName("08_Lvl1_Pirate_VC").isLoaded)
             {
-                if (obj.name == "Map")
+                foreach (var obj in SceneManager.GetSceneByName("08_Lvl1_Pirate_VC").GetRootGameObjects())
                 {
-                    MMMain.wet = obj.transform.FindChildRecursive("Scene").FindChildRecursive("Stuff").FindChildRecursive("Terrain_Pirate_lvl1").FindChildRecursive("Water").GetComponent<MeshRenderer>().material;
+                    if (obj.name == "Map")
+                    {
+                        MMMain.wet = obj.transform.FindChildRecursive("Scene").FindChildRecursive("Stuff").FindChildRecursive("Terrain_Pirate_lvl1").FindChildRecursive("Water").GetComponent<MeshRenderer>().material;
+                    }
                 }
             }
             async = SceneManager.UnloadSceneAsync("08_Lvl1_Pirate_VC");

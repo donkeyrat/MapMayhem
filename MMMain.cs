@@ -14,6 +14,7 @@ namespace MapMayhem
             AssetBundle.LoadFromMemory(Properties.Resources.badlands);
             AssetBundle.LoadFromMemory(Properties.Resources.beepic);
             AssetBundle.LoadFromMemory(Properties.Resources.cannonchaos);
+            AssetBundle.LoadFromMemory(Properties.Resources.darksim);
             AssetBundle.LoadFromMemory(Properties.Resources.denmark);
             AssetBundle.LoadFromMemory(Properties.Resources.desert);
             AssetBundle.LoadFromMemory(Properties.Resources.galaxy);
