@@ -85,9 +85,13 @@ namespace MapMayhem
                     }
                 }
             }
-            async = SceneManager.UnloadSceneAsync("08_Lvl1_Pirate_VC");
-            yield return new WaitUntil(() => async.isDone);
-            SceneManager.LoadScene("Assets/11 Scenes/MainMenu.unity");
+
+            if (SceneManager.GetSceneByName("08_Lvl1_Pirate_VC").isLoaded)
+            {
+                async = SceneManager.UnloadSceneAsync("08_Lvl1_Pirate_VC");
+                yield return new WaitUntil(() => async.isDone);
+                SceneManager.LoadScene("Assets/11 Scenes/MainMenu.unity");
+            }
             doneStealing = true;
             yield break;
         }
