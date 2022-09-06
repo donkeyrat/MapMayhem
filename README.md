@@ -14,10 +14,6 @@ Check the Maps menu and go to the next page, and boom, new maps! They can be fou
 
 The mod's [**Github**](https://github.com/donkeyrat/MapMayhem) is now the only place to view the full changelog.
 
-## Changelog
-
-The mod's [**Github**](https://github.com/donkeyrat/MapMayhem) is now the only place to view the full changelog.
-
 ## 1.0.0
 
  - Added Badlands map.
