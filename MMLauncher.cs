@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MapMayhem
 {
-	[BepInPlugin("teamgrad.mapmayhem", "Map Mayhem", "2.0.1")]
+	[BepInPlugin("teamgrad.mapmayhem", "Map Mayhem", "2.1.0")]
 	public class MMLauncher : BaseUnityPlugin
 	{
 		public MMLauncher()
