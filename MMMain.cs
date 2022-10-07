@@ -32,6 +32,14 @@ namespace MapMayhem
             AssetBundle.LoadFromMemory(Properties.Resources.spaceisland);
             AssetBundle.LoadFromMemory(Properties.Resources.spikes);
             AssetBundle.LoadFromMemory(Properties.Resources.winter);
+            AssetBundle.LoadFromMemory(Properties.Resources.lasertag);
+            AssetBundle.LoadFromMemory(Properties.Resources.whirlwind);
+            AssetBundle.LoadFromMemory(Properties.Resources.balancing);
+            AssetBundle.LoadFromMemory(Properties.Resources.quadbridges);
+            AssetBundle.LoadFromMemory(Properties.Resources.towerdefense);
+            AssetBundle.LoadFromMemory(Properties.Resources.blackhole);
+            AssetBundle.LoadFromMemory(Properties.Resources.slide);
+            AssetBundle.LoadFromMemory(Properties.Resources.laststand);
             var db = LandfallUnitDatabase.GetDatabase();
             foreach (var sb in mapMayhem.LoadAllAssets<SoundBank>()) {
                 var vsb = ServiceLocator.GetService<MusicHandler>().bank;
@@ -66,6 +74,9 @@ namespace MapMayhem
                 name = "SuperBullshit",
                 hideFlags = HideFlags.HideAndDontSave
             }.AddComponent<MapManager>();
+            
+            var harmony = new Harmony("UC+Coming2023");
+            harmony.PatchAll();
         }
 
         public static AssetBundle mapMayhem = AssetBundle.LoadFromMemory(Properties.Resources.mapmayhem);

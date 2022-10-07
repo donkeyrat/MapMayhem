@@ -461,6 +461,7 @@
     <Compile Include="CurseSpawner.cs" />
     <Compile Include="FlyTowards.cs" />
     <Compile Include="GamestateEvents.cs" />
+    <Compile Include="GroundPatcher.cs" />
     <Compile Include="MapManager.cs" />
     <Compile Include="MMBinder.cs" />
     <Compile Include="MMCollisionDamage.cs" />
@@ -503,6 +504,11 @@
     <None Include="Resources\spaceisland" />
     <None Include="Resources\spikes" />
     <None Include="Resources\winter" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\blackhole" />
+    <Content Include="Resources\laststand" />
+    <Content Include="Resources\slide" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

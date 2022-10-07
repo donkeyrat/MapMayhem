@@ -18,10 +18,6 @@ namespace MapMayhem
 
         public void SceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
         {
-            if (scene.path == "Assets/11 Scenes/MainMenu.unity" && !doneStealing)
-            {
-                StartCoroutine(LoadAsync());
-            }
             if (scene.name.Contains("MM_"))
             {
                 GameObject astar = null;
@@ -35,10 +31,23 @@ namespace MapMayhem
                     if (obj.GetComponent<MapSettings>())
                     {
                         map = obj;
+                        var shadersToReplace = new List<MeshRenderer>(obj.GetComponentsInChildren<MeshRenderer>(true)
+                            .ToList().FindAll(x => x.name.Contains("_ReplaceMe")));
+                        foreach (var rend in shadersToReplace)
+                        {
+                            rend.material.shader = Shader.Find(rend.material.shader.name);
+                            if (rend.GetComponent<PiratePlacementTransparency>())
+                            {
+                                rend.GetComponent<PiratePlacementTransparency>().Materials[0].m_oldMaterial.shader =
+                                    Shader.Find(rend.GetComponent<PiratePlacementTransparency>().Materials[0]
+                                        .m_oldMaterial.shader.name);
+                            }
+                        }
                     }
-                    if (obj.name == "Water")
+                    if (obj.name.Contains("_ReplaceMe"))
                     {
-                        obj.GetComponent<MeshRenderer>().material = MMMain.wet;
+                        obj.GetComponent<MeshRenderer>().material.shader =
+                            Shader.Find(obj.GetComponent<MeshRenderer>().material.shader.name);
                     }
                     if (obj.name == "WaterManager")
                     {
@@ -71,31 +80,5 @@ namespace MapMayhem
                 }
             }
         }
-        public IEnumerator LoadAsync()
-        {
-            var async = SceneManager.LoadSceneAsync("08_Lvl1_Pirate_VC", LoadSceneMode.Additive);
-            yield return new WaitUntil(() => async.isDone);
-            if (SceneManager.GetSceneByName("08_Lvl1_Pirate_VC").isLoaded)
-            {
-                foreach (var obj in SceneManager.GetSceneByName("08_Lvl1_Pirate_VC").GetRootGameObjects())
-                {
-                    if (obj.name == "Map")
-                    {
-                        MMMain.wet = obj.transform.FindChildRecursive("Scene").FindChildRecursive("Stuff").FindChildRecursive("Terrain_Pirate_lvl1").FindChildRecursive("Water").GetComponent<MeshRenderer>().material;
-                    }
-                }
-            }
-
-            if (SceneManager.GetSceneByName("08_Lvl1_Pirate_VC").isLoaded)
-            {
-                async = SceneManager.UnloadSceneAsync("08_Lvl1_Pirate_VC");
-                yield return new WaitUntil(() => async.isDone);
-                SceneManager.LoadScene("Assets/11 Scenes/MainMenu.unity");
-            }
-            doneStealing = true;
-            yield break;
-        }
-
-        public bool doneStealing;
     }
 }
