@@ -1,6 +1,6 @@
-﻿# Map Mayhem
+# Map Mayhem
 
-Haven't you felt that TABS' map variety is lacking? Well fret not, young padawan! With this mod, you can get a whole **THIRTY-TWO** new maps! These maps each have diverse environments with their own stories to tell. Among these maps are the legendary Neon and Sahara maps!
+Haven't you felt that TABS' map variety is lacking? Well fret not, young padawan! With this mod, you can get a whole **THIRTY-ONE** new maps! These maps each have diverse environments with their own stories to tell. Among these maps are the legendary Neon and Sahara maps!
 
 ### If you have trouble with the mod, or if you just want to chat, you can join the [TABS Mod Center](https://discord.gg/zrs44qyp7S).
 
@@ -61,16 +61,20 @@ The mod's [**Github**](https://github.com/donkeyrat/MapMayhem) is now the only p
 
  - Added Balancing simulation map.
  - Added Black Hole simulation map.
+ - Added Bouncy Castle simulation map.
  - Added Laser Tag simulation map.
  - Added Last Stand simulation map.
  - Added Quad Bridges simulation map.
  - Added Slide simulation map.
  - Added Tower Defense simulation map.
  - Added Whirlwind simulation map.
- - Added Bouncy Castle simulation map.
- - Added Elevator simulation map.
  - Improved performance on startup.
  - Fixed visible border on skyboxes.
+
+### 3.0.1
+
+ - Fixed incompatibility with Vanilla+ on physics maps.
+ - Fixed flying units not flying properly over bridges on physics maps.
 
 ## Credits
 

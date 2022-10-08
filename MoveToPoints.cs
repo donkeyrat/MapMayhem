@@ -72,7 +72,7 @@ namespace MapMayhem
 
 		private void ReScan()
 		{
-			AstarPath.active.UpdateGraphs(gameObject.GetComponent<Collider>().bounds);
+			//AstarPath.active.UpdateGraphs(gameObject.GetComponent<Collider>().bounds);
 		}
 
 		private List<Vector3> positions = new List<Vector3>();

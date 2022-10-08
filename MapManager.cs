@@ -67,16 +67,16 @@ namespace MapMayhem
                     path.data.recastGraph.rasterizeMeshes = false;
                     path.data.recastGraph.rasterizeColliders = true;
                     path.Scan();
-                    /*
-                    path.data.GetNodes(delegate (GraphNode node)
-                    {
-                        GameObject gameObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                        gameObject.transform.position = (Vector3)node.position;
-                        gameObject.GetComponent<Renderer>().material.color = Color.green;
-                        gameObject.GetComponent<Collider>().enabled = false;
-                        gameObject.transform.localScale *= 0.5f;
-                    });
-                    */
+
+                    //path.data.GetNodes(delegate (GraphNode node)
+                    //{
+                    //    GameObject gameObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    //    gameObject.transform.position = (Vector3)node.position;
+                    //    gameObject.GetComponent<Renderer>().material.color = Color.green;
+                    //    gameObject.GetComponent<Collider>().enabled = false;
+                    //    gameObject.transform.localScale *= 0.5f;
+                    //});
+
                 }
             }
         }

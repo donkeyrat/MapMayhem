@@ -40,6 +40,7 @@ namespace MapMayhem
             AssetBundle.LoadFromMemory(Properties.Resources.blackhole);
             AssetBundle.LoadFromMemory(Properties.Resources.slide);
             AssetBundle.LoadFromMemory(Properties.Resources.laststand);
+            AssetBundle.LoadFromMemory(Properties.Resources.bouncycastle);
             var db = LandfallUnitDatabase.GetDatabase();
             foreach (var sb in mapMayhem.LoadAllAssets<SoundBank>()) {
                 var vsb = ServiceLocator.GetService<MusicHandler>().bank;

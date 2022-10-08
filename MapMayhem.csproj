@@ -507,6 +507,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\blackhole" />
+    <Content Include="Resources\bouncycastle" />
     <Content Include="Resources\laststand" />
     <Content Include="Resources\slide" />
   </ItemGroup>
