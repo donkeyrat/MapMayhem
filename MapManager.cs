@@ -51,7 +51,8 @@ namespace MapMayhem
                     }
                     if (obj.name == "WaterManager")
                     {
-                        obj.GetComponent<PirateWaterManager>().WaterMaterial = MMMain.wet;
+                        obj.GetComponent<PirateWaterManager>().WaterMaterial =
+                            obj.transform.parent.GetComponent<MeshRenderer>().material;
                     }
                 }
                 if (astar != null && map != null)
