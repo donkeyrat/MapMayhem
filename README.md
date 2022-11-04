@@ -76,6 +76,11 @@ The mod's [**Github**](https://github.com/donkeyrat/MapMayhem) is now the only p
  - Fixed incompatibility with Vanilla+ on physics maps.
  - Fixed flying units not flying properly over bridges on physics maps.
 
+### 3.0.2
+
+ - Updated to the latest version of TABS.
+ - Fixed Space Island having incompatibilities with other maps.
+
 ## Credits
 
 This mod was created by Team Grad, an ambitious mod team that aims to improve the game through adding a plethora of new content!
